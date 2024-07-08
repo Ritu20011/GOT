@@ -89,18 +89,25 @@ var mySwiper = new Swiper(".gallerySwiper", {
 $(document).ready(function () {
 
     // cast active content
-    $('.castSwiper .swiper-slide.active').attr('id');
+    var activeId = $('.castSwiper .swiper-slide.active').attr('id');
 
-    $('.castDetails').fadeOut();
-    var castImg = '.castDetails.' + $('.castSwiper .swiper-slide.active').attr('id');
+    // Initially hide all castDetails and fade in the one corresponding to the active swiper-slide
+    $('.castDetails').hide();
+    var castImg = '.castDetails.' + activeId;
     $(castImg).fadeIn();
 
+    // Click event for swiper-slide elements
     $('.castSwiper .swiper-slide').click(function () {
+        // Remove active class from all swiper-slide elements and add it to the clicked one
         $('.castSwiper .swiper-slide').removeClass('active');
         $(this).addClass('active');
+
+        // Get the id of the clicked swiper-slide element
         var imgId = $(this).attr('id');
-        $('.castDetails').fadeOut(); // Hide all .castDetails elements
-        $('.castDetails.' + imgId).fadeIn(); // Show the .castDetails element with the corresponding class
+
+        // Hide all castDetails elements and fade in the one corresponding to the clicked swiper-slide
+        $('.castDetails').fadeOut();
+        $('.castDetails.' + imgId).fadeIn();
     });
 
 
@@ -130,16 +137,59 @@ $(document).ready(function () {
         // Fade in the selected season and the next two elements
         selectedSeason.fadeIn();
         if (window.matchMedia('(min-width: 768px)').matches) {
-        selectedSeason.next().fadeIn();
-        selectedSeason.next().next().fadeIn();
+            selectedSeason.next().fadeIn();
+            selectedSeason.next().next().fadeIn();
         }
     });
 
-    var initialSelectedValue = $('.selectSea').val(); // Get the initial selected value
-    if (initialSelectedValue) {
-        $('.selectSea').change(); // Trigger the change event to handle the initial selected value
+    function initializeSelection() {
+        var initialSelectedValue = $('.selectSea').val(); // Get the initial selected value
+        if (initialSelectedValue) {
+            $('.selectSea').change(); // Trigger the change event to handle the initial selected value
+        }
     }
 
+    // Call the initializeSelection function on page load
+    initializeSelection();
+
+
+
+
+
+    var activeGallery = $('.gallerySwiper .swiper-slide.active').attr('id');
+
+    // Initially hide all galleryDetails and fade in the one corresponding to the active swiper-slide
+    $('.galleryDetails').hide();
+    var castImg = '.galleryDetails.' + activeGallery;
+    $(castImg).fadeIn();
+
+    function gallery(){
+        if ($(this).hasClass('active')) {
+            return false;
+        } else {
+            // Remove active class from all swiper-slide elements and add it to the clicked one
+            $('.gallerySwiper .swiper-slide').removeClass('active');
+            $(this).addClass('active');
+
+            // Get the id of the clicked swiper-slide element
+            var imgId = $(this).attr('id');
+
+            // Hide all galleryDetails elements and fade in the one corresponding to the clicked swiper-slide
+            $('.galleryDetails').hide();
+            $('.galleryDetails.' + imgId).fadeIn();
+        }
+    }
+
+    $('.gallerySwiper .swiper-slide').mouseenter(function () {
+        gallery()
+    });
+    $('.gallerySwiper .swiper-slide').on('touchstart', function(event) {
+        // Prevent default behavior for touchstart only if it's not a touchmove event
+        if (event.originalEvent.touches.length === 1) {
+            gallery.call(this); // Use call() to set 'this' to the current swiper-slide element
+            event.preventDefault();
+        }
+    });
 
 
 })

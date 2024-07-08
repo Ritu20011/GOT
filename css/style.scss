@@ -54,7 +54,7 @@ body {
 }
 
 a {
-    color: $text-color;
+    color: $primary-color;
     text-decoration: none;
     @include trans();
 
@@ -72,6 +72,12 @@ h1,
     color: $white;
     text-shadow: 0 0 10px $secondary-color;
     text-transform: uppercase;
+    @media (max-width: 767px) {
+        font-size: 60px;
+    }
+    @media (max-width: 575px) {
+        font-size: 40px;
+    }
 }
 
 h2,
@@ -457,22 +463,32 @@ h2,
         height: calc(100% + 20px);
     }
 
+    .swiper-slide {
+        &.active {
+            img {
+                width: 100%;
+                border: inset 5px transparent;
+                backdrop-filter: blur(10px);
+                background-color: $secondary-color;
+            }
+        }
+    }
+
     img {
         width: calc(100% - 50px);
         height: 100%;
         object-fit: cover;
         object-position: center;
         @include trans();
-        &:hover {
-            width: 100%;
-            border: inset 5px transparent;
-            backdrop-filter: blur(10px);
-        }
+
+
+
         @media (max-width: 991px) {
             width: 100%;
             aspect-ratio: 1/1;
             height: 90%;
-            &:hover{
+
+            &:hover {
                 height: 100%;
             }
         }
@@ -480,7 +496,12 @@ h2,
 }
 
 .galleryDetailsDiv {
+    // position: relative;
     height: 600px;
+
+    &>* {
+        height: 100%;
+    }
 
     @media (max-width: 991px) {
         height: auto;
@@ -490,7 +511,6 @@ h2,
 }
 
 .galleryDetails {
-    background-image: url(../images/horses.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -502,6 +522,9 @@ h2,
     flex-direction: column;
     font-size: 20px;
     font-family: "Baskervville SC", serif;
+    // position: absolute;
+    // top: 0;
+    // left: 0;
 
     @media (max-width: 991px) {
         margin: 0;
@@ -529,6 +552,12 @@ h2,
 .footCont {
     justify-content: space-between;
     color: $primary-color;
+    flex-wrap: wrap;
+    text-align: center;
+
+    @media (max-width: 767px) {
+        justify-content: center;
+    }
 }
 
 .footMenu {

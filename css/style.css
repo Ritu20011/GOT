@@ -30,7 +30,7 @@ body {
 }
 
 a {
-  color: #dedcdc;
+  color: #555;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
 }
@@ -46,6 +46,18 @@ h1,
   color: #fff;
   text-shadow: 0 0 10px #60daff;
   text-transform: uppercase;
+}
+@media (max-width: 767px) {
+  h1,
+  .h1 {
+    font-size: 60px;
+  }
+}
+@media (max-width: 575px) {
+  h1,
+  .h1 {
+    font-size: 40px;
+  }
 }
 
 h2,
@@ -436,6 +448,13 @@ h2,
     height: calc(100% + 20px);
   }
 }
+.gallerySwiper .swiper-slide.active img {
+  width: 100%;
+  border: inset 5px transparent;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  background-color: #60daff;
+}
 .gallerySwiper img {
   width: calc(100% - 50px);
   height: 100%;
@@ -444,12 +463,6 @@ h2,
   -o-object-position: center;
      object-position: center;
   transition: all 0.3s ease-in-out;
-}
-.gallerySwiper img:hover {
-  width: 100%;
-  border: inset 5px transparent;
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
 }
 @media (max-width: 991px) {
   .gallerySwiper img {
@@ -465,6 +478,9 @@ h2,
 .galleryDetailsDiv {
   height: 600px;
 }
+.galleryDetailsDiv > * {
+  height: 100%;
+}
 @media (max-width: 991px) {
   .galleryDetailsDiv {
     height: auto;
@@ -474,7 +490,6 @@ h2,
 }
 
 .galleryDetails {
-  background-image: url(../images/horses.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -515,6 +530,13 @@ h2,
 .footCont {
   justify-content: space-between;
   color: #555;
+  flex-wrap: wrap;
+  text-align: center;
+}
+@media (max-width: 767px) {
+  .footCont {
+    justify-content: center;
+  }
 }
 
 .footMenu {
