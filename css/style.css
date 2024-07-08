@@ -1,0 +1,524 @@
+@import url("https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+::-moz-selection {
+  background-color: #60daff;
+  color: #000;
+}
+::selection {
+  background-color: #60daff;
+  color: #000;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  border-color: transparent;
+}
+
+body {
+  font-size: 17px;
+  font-family: "Roboto", sans-serif;
+  color: #dedcdc;
+}
+
+a {
+  color: #dedcdc;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+a:hover {
+  color: #60daff;
+}
+
+h1,
+.h1 {
+  font-size: 90px;
+  font-family: "Baskervville SC", serif;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 0 10px #60daff;
+  text-transform: uppercase;
+}
+
+h2,
+.h2 {
+  font-size: 30px;
+  color: #fff;
+  font-family: "Baskervville SC", serif;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.big {
+  font-size: 150%;
+}
+
+.panel {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.banner {
+  position: relative;
+  color: #fff;
+}
+
+.banImgOverlay,
+.banOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.banOverlay {
+  background-image: radial-gradient(transparent, #000);
+}
+
+.banPg {
+  text-align: end;
+  max-width: 1280px;
+  margin: auto;
+  right: 0;
+  width: 90%;
+}
+
+.banCont {
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 20px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  flex-direction: column;
+  padding-bottom: 100px;
+  font-size: 18px;
+  text-align: center;
+  width: 90%;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+}
+
+.bannerSwipper .swiper-pagination-bullet {
+  opacity: 1;
+  box-shadow: 0 0 2px 1px #60daff;
+  background-color: #60daff;
+  margin: 0 7px !important;
+}
+.bannerSwipper .swiper-pagination-bullet-active {
+  background-color: transparent;
+  scale: 1.5;
+}
+
+.topHead {
+  text-align: center;
+  font-size: 30px;
+  font-family: "Baskervville SC", serif;
+}
+
+.mainBack {
+  position: relative;
+  background-image: url(../images/full_page.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.castDetails {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 600px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+
+.castTitle,
+.seaTitle {
+  font-weight: 700;
+}
+
+.castCont,
+.seaCont {
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  padding: 10px 20px;
+  text-shadow: 1px 1px 4px #000;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.castSwiper {
+  width: 100%;
+  height: 500px;
+}
+@media (max-width: 991px) {
+  .castSwiper {
+    height: 170px;
+  }
+}
+.castSwiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+
+.castThumb {
+  position: relative;
+}
+@media (max-width: 991px) {
+  .castThumb {
+    padding: 0 50px;
+  }
+}
+.castThumb .swiper-slide {
+  position: relative;
+}
+.castThumb .swiper-slide img {
+  overflow: hidden;
+  border-radius: 50%;
+  margin: auto;
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  margin: auto;
+  display: block;
+  filter: grayscale(100%);
+  padding: 5px;
+  transition: all 0.3s ease-in-out;
+  border: solid 2px transparent;
+  height: 85%;
+}
+.castThumb .swiper-slide::after {
+  content: "";
+  position: absolute;
+  width: 20%;
+  height: 2px;
+  background-color: #60daff;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+@media (max-width: 992px) {
+  .castThumb .swiper-slide::after {
+    top: auto;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 2px;
+    height: 50px;
+  }
+}
+.castThumb .swiper-slide:hover img {
+  filter: none;
+  box-shadow: 0 0 5px 2px #60daff;
+  border-color: #60daff;
+}
+.castThumb .swiper-slide.active img {
+  filter: none;
+  scale: 1.1;
+  box-shadow: 0 0 5px 2px #60daff;
+  border-color: #60daff;
+}
+.castThumb .swiper-slide.active::after {
+  opacity: 1;
+}
+
+.castDescription,
+.seaDescription,
+.galleryDescription {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
+
+.slider-nav {
+  position: absolute;
+  color: #60daff;
+  font-size: 25px;
+  width: 40px;
+  height: 40px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 50%;
+}
+.slider-nav:hover {
+  color: #60daff;
+  box-shadow: 0 0 10px #60daff;
+}
+
+.slider-prev,
+.slider-next {
+  top: -50px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.slider-next {
+  top: auto;
+  bottom: -50px;
+}
+
+@media (max-width: 991px) {
+  .slider-prev,
+  .slider-next {
+    top: 50%;
+    left: 40px;
+    rotate: -90deg;
+    transform-origin: left;
+    transform: translate(0, -50%);
+  }
+  .slider-next {
+    left: auto;
+    right: -40px;
+  }
+}
+.seasonBack {
+  background-image: url(../images/horses.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  min-height: 500px;
+}
+
+.selectSeaDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 20px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: solid 1px #555;
+}
+.selectSeaDiv select {
+  background: transparent;
+  border: none;
+  color: #dedcdc;
+}
+.selectSeaDiv select option {
+  background-color: #555;
+}
+
+.seaCont {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+}
+.seaCont.active {
+  opacity: 1;
+  visibility: visible;
+}
+@media (max-width: 767px) {
+  .seaCont {
+    position: relative;
+  }
+}
+
+.seaThumb {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  row-gap: 20px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+@media (max-width: 767px) {
+  .seaThumb {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+  .seaThumb.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.seaNum {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.seaThumbImg {
+  padding: 5px;
+  cursor: pointer;
+}
+.seaThumbImg img {
+  width: 60%;
+  aspect-ratio: 1/0.5;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  transition: all 0.3s ease-in-out;
+}
+.seaThumbImg:hover img {
+  box-shadow: 0 0 2px 1px #60daff;
+}
+
+.seaThumb.active .seaThumbImg {
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+.seaThumb.active .seaThumbImg img {
+  width: 100%;
+  aspect-ratio: 1/0.7;
+}
+
+.galleryThumb {
+  position: relative;
+}
+
+@media (max-width: 991px) {
+  .galleryMain {
+    flex-direction: column-reverse;
+  }
+}
+
+.gallerySwiper {
+  height: 500px;
+}
+@media (max-width: 991px) {
+  .gallerySwiper {
+    height: calc(100% + 20px);
+  }
+}
+.gallerySwiper img {
+  width: calc(100% - 50px);
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  transition: all 0.3s ease-in-out;
+}
+.gallerySwiper img:hover {
+  width: 100%;
+  border: inset 5px transparent;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+@media (max-width: 991px) {
+  .gallerySwiper img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    height: 90%;
+  }
+  .gallerySwiper img:hover {
+    height: 100%;
+  }
+}
+
+.galleryDetailsDiv {
+  height: 600px;
+}
+@media (max-width: 991px) {
+  .galleryDetailsDiv {
+    height: auto;
+    width: 100%;
+    aspect-ratio: 1/0.7;
+  }
+}
+
+.galleryDetails {
+  background-image: url(../images/horses.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: calc(100% + 70px);
+  margin-left: -70px;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  row-gap: 20px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  flex-direction: column;
+  font-size: 20px;
+  font-family: "Baskervville SC", serif;
+}
+@media (max-width: 991px) {
+  .galleryDetails {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+.mainFoot {
+  background-color: #000;
+  border-top: solid 1px #555;
+}
+
+.copyRight {
+  margin: 0;
+}
+
+.footeLogo {
+  margin-bottom: 20px;
+}
+
+.footCont {
+  justify-content: space-between;
+  color: #555;
+}
+
+.footMenu {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}/*# sourceMappingURL=style.css.map */
