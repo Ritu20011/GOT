@@ -181,7 +181,20 @@ $(document).ready(function () {
     }
 
     $('.gallerySwiper .swiper-slide').mouseenter(function () {
-        gallery()
+        if ($(this).hasClass('active')) {
+            return false;
+        } else {
+            // Remove active class from all swiper-slide elements and add it to the clicked one
+            $('.gallerySwiper .swiper-slide').removeClass('active');
+            $(this).addClass('active');
+
+            // Get the id of the clicked swiper-slide element
+            var imgId = $(this).attr('id');
+
+            // Hide all galleryDetails elements and fade in the one corresponding to the clicked swiper-slide
+            $('.galleryDetails').hide();
+            $('.galleryDetails.' + imgId).fadeIn();
+        }
     });
     $('.gallerySwiper .swiper-slide').on('touchstart', function(event) {
         // Prevent default behavior for touchstart only if it's not a touchmove event
