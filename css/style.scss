@@ -72,9 +72,11 @@ h1,
     color: $white;
     text-shadow: 0 0 10px $secondary-color;
     text-transform: uppercase;
+
     @media (max-width: 767px) {
         font-size: 60px;
     }
+
     @media (max-width: 575px) {
         font-size: 40px;
     }
@@ -92,6 +94,7 @@ h2,
 
 .big {
     font-size: 150%;
+    text-align: center;
 }
 
 .panel {
@@ -141,6 +144,7 @@ h2,
     margin: auto;
     right: 0;
     width: 90%;
+    padding: 10px 0;
 }
 
 .banCont {
@@ -193,8 +197,11 @@ h2,
     position: absolute;
     top: 0;
     left: 0;
-    @include flex();
+    @include flex(center, end);
     // display: none;
+    @media (max-width: 991px) {
+        height: 450px;
+    }
 }
 
 .castTitle,
@@ -204,10 +211,11 @@ h2,
 
 .castCont,
 .seaCont {
-    backdrop-filter: blur(5px);
+    // backdrop-filter: blur(5px);
     padding: 10px 20px;
     text-shadow: 1px 1px 4px #000;
     background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 3px $secondary-color;
 }
 
 .castSwiper {
@@ -355,7 +363,7 @@ h2,
 .seasonBack {
     background-image: url(../images/horses.png);
     background-size: contain;
-    background-position: center;
+    background-position: bottom right;
     background-repeat: no-repeat;
     position: relative;
     min-height: 500px;
@@ -453,7 +461,14 @@ h2,
 .galleryMain {
     @media (max-width: 991px) {
         flex-direction: column-reverse;
+        padding: 0 35px;
     }
+}
+
+@media (max-width: 991px) {
+    .gallery-prev {left: -5px;}
+
+    .gallery-next {right: -85px;}
 }
 
 .gallerySwiper {
@@ -478,7 +493,7 @@ h2,
         width: calc(100% - 50px);
         height: 100%;
         object-fit: cover;
-        object-position: center;
+        object-position: top;
         @include trans();
 
 
@@ -517,7 +532,7 @@ h2,
     height: 100%;
     width: calc(100% + 70px);
     margin-left: -70px;
-    padding: 50px;
+    padding: 60px;
     @include flex();
     flex-direction: column;
     font-size: 20px;
@@ -529,6 +544,7 @@ h2,
     @media (max-width: 991px) {
         margin: 0;
         width: 100%;
+        padding: 10px;
     }
 }
 
@@ -547,6 +563,7 @@ h2,
 
 .footeLogo {
     margin-bottom: 20px;
+    max-width: 100px;
 }
 
 .footCont {

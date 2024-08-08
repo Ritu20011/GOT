@@ -71,6 +71,7 @@ h2,
 
 .big {
   font-size: 150%;
+  text-align: center;
 }
 
 .panel {
@@ -118,6 +119,7 @@ h2,
   margin: auto;
   right: 0;
   width: 90%;
+  padding: 10px 0;
 }
 
 .banCont {
@@ -173,10 +175,15 @@ h2,
   left: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: end;
   row-gap: 20px;
   -moz-column-gap: 20px;
        column-gap: 20px;
+}
+@media (max-width: 991px) {
+  .castDetails {
+    height: 450px;
+  }
 }
 
 .castTitle,
@@ -186,11 +193,10 @@ h2,
 
 .castCont,
 .seaCont {
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
   padding: 10px 20px;
   text-shadow: 1px 1px 4px #000;
   background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 5px 3px #60daff;
 }
 
 .castSwiper {
@@ -336,7 +342,7 @@ h2,
 .seasonBack {
   background-image: url(../images/horses.png);
   background-size: contain;
-  background-position: center;
+  background-position: bottom right;
   background-repeat: no-repeat;
   position: relative;
   min-height: 500px;
@@ -437,9 +443,18 @@ h2,
 @media (max-width: 991px) {
   .galleryMain {
     flex-direction: column-reverse;
+    padding: 0 35px;
   }
 }
 
+@media (max-width: 991px) {
+  .gallery-prev {
+    left: -5px;
+  }
+  .gallery-next {
+    right: -85px;
+  }
+}
 .gallerySwiper {
   height: 500px;
 }
@@ -460,8 +475,8 @@ h2,
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  -o-object-position: top;
+     object-position: top;
   transition: all 0.3s ease-in-out;
 }
 @media (max-width: 991px) {
@@ -496,7 +511,7 @@ h2,
   height: 100%;
   width: calc(100% + 70px);
   margin-left: -70px;
-  padding: 50px;
+  padding: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -511,6 +526,7 @@ h2,
   .galleryDetails {
     margin: 0;
     width: 100%;
+    padding: 10px;
   }
 }
 
@@ -525,6 +541,7 @@ h2,
 
 .footeLogo {
   margin-bottom: 20px;
+  max-width: 100px;
 }
 
 .footCont {

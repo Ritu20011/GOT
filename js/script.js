@@ -10,6 +10,7 @@ const swiper = new Swiper('.bannerSwipper', {
     },
     pagination: {
         el: '.banPg',
+        dynamicBullets: true,
         clickable: true,
     },
 
@@ -163,7 +164,7 @@ $(document).ready(function () {
     var castImg = '.galleryDetails.' + activeGallery;
     $(castImg).fadeIn();
 
-    function gallery(){
+    function gallery() {
         if ($(this).hasClass('active')) {
             return false;
         } else {
@@ -196,7 +197,7 @@ $(document).ready(function () {
             $('.galleryDetails.' + imgId).fadeIn();
         }
     });
-    $('.gallerySwiper .swiper-slide').on('touchstart', function(event) {
+    $('.gallerySwiper .swiper-slide').on('touchstart', function (event) {
         // Prevent default behavior for touchstart only if it's not a touchmove event
         if (event.originalEvent.touches.length === 1) {
             gallery.call(this); // Use call() to set 'this' to the current swiper-slide element
